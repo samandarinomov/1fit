@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const gym_controller_1 = require("../controllers/gym.controller");
+const validation_middleware_1 = require("../middlewares/validation.middleware");
+const gym_validator_1 = require("../validators/gym.validator");
+const is_admin_middleware_1 = require("../middlewares/is-admin.middleware");
+const is_auth_middleware_1 = require("../middlewares/is-auth.middleware");
+const router = (0, express_1.Router)();
+router.post('/gym', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, (0, validation_middleware_1.validate)(gym_validator_1.gymSchema), gym_controller_1.createGym);
+router.get('/gym', gym_controller_1.getAllGyms);
+router.get('/gym/:id', gym_controller_1.getGymById);
+router.put('/gym/:id', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, (0, validation_middleware_1.validate)(gym_validator_1.gymUpdateSchema), gym_controller_1.updateGym);
+router.delete('/gym/:id', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, gym_controller_1.deleteGym);
+exports.default = router;

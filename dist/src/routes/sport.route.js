@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const sport_controller_1 = require("../controllers/sport.controller");
+const validation_middleware_1 = require("../middlewares/validation.middleware");
+const sport_validator_1 = require("../validators/sport.validator");
+const is_admin_middleware_1 = require("../middlewares/is-admin.middleware");
+const is_auth_middleware_1 = require("../middlewares/is-auth.middleware");
+const router = (0, express_1.Router)();
+router.post('/sport', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, (0, validation_middleware_1.validate)(sport_validator_1.sportSchema), sport_controller_1.createSport);
+router.get('/sport', sport_controller_1.getAllSports);
+router.get('/sport/:id', sport_controller_1.getSportById);
+router.put('/sport/:id', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, (0, validation_middleware_1.validate)(sport_validator_1.sportUpdateSchema), sport_controller_1.updateSport);
+router.delete('/sport/:id', is_auth_middleware_1.isAuth, is_admin_middleware_1.isAdmin, sport_controller_1.deleteSport);
+exports.default = router;

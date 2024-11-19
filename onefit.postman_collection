@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "b2e494ac-22ec-46ba-af24-935950bf6a6d",
+		"name": "onefit Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34643018"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullname\": \"Samandar\",\n    \"email\": \"samandarinomov04@gmail.com\",\n    \"password\": \"55555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"samandarinomov04@gmail.com\",\n    \"password\": \"55555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"55555\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyZTMxZmExLWE1MzEtNDlkYy04OGE2LWIwOTQ3YjJiYzgxOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcyNzUyNDU0MSwiZXhwIjoxNzI3NjEwOTQxfQ.y1YWQxy4yeXiOOYQrTh-0Fhv-OGq4sKtfJwEMjpcMnc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/user/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sport",
+			"item": [
+				{
+					"name": "Get All Sports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/sport?name=ness",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "ness"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Sport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fitness\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/sport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sport By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/sport/eeffc069-711b-40de-9554-15fd28bf9131",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport",
+								"eeffc069-711b-40de-9554-15fd28bf9131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sport",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Football\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/sport/eeffc069-711b-40de-9554-15fd28bf9131",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport",
+								"eeffc069-711b-40de-9554-15fd28bf9131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sport",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/sport/b6646407-6e6d-4851-9818-edf69bf98a33",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport",
+								"b6646407-6e6d-4851-9818-edf69bf98a33"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gym",
+			"item": [
+				{
+					"name": "Get All Gyms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/gym?name=glad",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"gym"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "glad"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Gym",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gladiator\",\n    \"address\": \"Yunusabad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/gym",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"gym"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Gym By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/gym/a8f8a31b-6c20-4870-bb8d-74fd4952652e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"gym",
+								"a8f8a31b-6c20-4870-bb8d-74fd4952652e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gym",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Brothers Gym\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/gym/a8f8a31b-6c20-4870-bb8d-74fd4952652e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"gym",
+								"a8f8a31b-6c20-4870-bb8d-74fd4952652e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gym",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/gym/a8f8a31b-6c20-4870-bb8d-74fd4952652e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"gym",
+								"a8f8a31b-6c20-4870-bb8d-74fd4952652e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sport-Gym",
+			"item": [
+				{
+					"name": "Link Sport - Gym",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sportId\": \"185493d0-51ab-4919-a233-ce9a2f20d0b0\",\n    \"gymId\": \"880308a0-724b-46d9-a4fd-39c3cafa4ccc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/sport-gym/link",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport-gym",
+								"link"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Gyms for Sport",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/sport/185493d0-51ab-4919-a233-ce9a2f20d0b0/gyms",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sport",
+								"185493d0-51ab-4919-a233-ce9a2f20d0b0",
+								"gyms"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [
+				{
+					"name": "Get User Subscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTA3YTA1LTEyZGUtNDhlNy05MWM0LTk0ZWI2ZjFmMjEyMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3Mjc1MjQyNDksImV4cCI6MTcyNzYxMDY0OX0.FdSoiKv15iM_zcr72q4GTrnIyg1vZiAn8XVQKP7fG4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe for Gym",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTA3YTA1LTEyZGUtNDhlNy05MWM0LTk0ZWI2ZjFmMjEyMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3Mjc1MjQyNDksImV4cCI6MTcyNzYxMDY0OX0.FdSoiKv15iM_zcr72q4GTrnIyg1vZiAn8XVQKP7fG4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"gymId\": \"880308a0-724b-46d9-a4fd-39c3cafa4ccc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTA3YTA1LTEyZGUtNDhlNy05MWM0LTk0ZWI2ZjFmMjEyMyIsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE3Mjc1MjQyNDksImV4cCI6MTcyNzYxMDY0OX0.FdSoiKv15iM_zcr72q4GTrnIyg1vZiAn8XVQKP7fG4M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/subscriptions/af3bf390-dbfc-40d3-96f0-1149b688e297",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"subscriptions",
+								"af3bf390-dbfc-40d3-96f0-1149b688e297"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
